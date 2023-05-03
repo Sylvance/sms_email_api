@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  from: MyString
+  to: MyString
+  subject: MyString
+  body: MyString
+  medium: MyString
+  is_received: false
+  sent_at: 2023-05-03 20:38:44
+  received_at: 2023-05-03 20:38:44
+
+two:
+  from: MyString
+  to: MyString
+  subject: MyString
+  body: MyString
+  medium: MyString
+  is_received: false
+  sent_at: 2023-05-03 20:38:44
+  received_at: 2023-05-03 20:38:44

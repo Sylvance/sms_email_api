@@ -1,9 +1,9 @@
-class MessagesController < ApplicationController
+class CommunicationsController < ApplicationController
   # {
   # "to": "your_phone_number_or_email_here",
   # "method": "sms or email"
   # }
-  def send_message
+  def send_communication
     message = "Congratulations, your transaction is successful."
     twilio_account_sid = Settings.development.twilio_account_sid,
     twilio_auth_token = Settings.development.twilio_auth_token,
