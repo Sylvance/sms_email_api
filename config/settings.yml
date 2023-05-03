@@ -1,0 +1,15 @@
+defaults: &defaults
+  twilio_account_sid: <%= ENV.fetch("TWILIO_ACCOUNT_SID") { "not_filled" } %>
+  twilio_auth_token: <%= ENV.fetch("TWILIO_AUTH_TOKEN") { "not_filled" } %>
+  twilio_phone_number: <%= ENV.fetch("TWILIO_PHONE_NUMBER") { "not_filled" } %>
+  mailgun_api_key: <%= ENV.fetch("MAILGUN_API_KEY") { "not_filled" } %>
+  mailgun_domain: <%= ENV.fetch("MAILGUN_DOMAIN") { "not_filled" } %>
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
