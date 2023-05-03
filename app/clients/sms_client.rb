@@ -13,7 +13,7 @@ class SmsClient
 
   def send_message
     third_party_client.messages.create(
-      from: third_party_client.twilio_phone_number,
+      from: Settings.development.twilio_phone_number,
       to: to,
       body: message
     )

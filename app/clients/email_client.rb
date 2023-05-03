@@ -21,6 +21,6 @@ class EmailClient
       text: message
     }
 
-    third_party_client.send_message(third_party_client.mailgun_domain, message_params)
+    third_party_client.send_message(Settings.development.mailgun_domain, message_params)
   end
 end

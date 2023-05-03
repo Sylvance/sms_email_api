@@ -165,6 +165,7 @@ GEM
     nokogiri (1.14.3-arm64-darwin)
       racc (~> 1.4)
     pg (1.5.3)
+    phonelib (0.8.1)
     puma (5.6.5)
       nio4r (~> 2.0)
     racc (1.6.2)
@@ -206,8 +207,12 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     ruby2_keywords (0.0.5)
+    simpleidn (0.2.1)
+      unf (~> 0.1.4)
     thor (1.2.1)
     timeout (0.3.2)
+    truemail (3.0.7)
+      simpleidn (~> 0.2.1)
     twilio-ruby (5.77.0)
       faraday (>= 0.9, < 3.0)
       jwt (>= 1.5, < 3.0)
@@ -232,8 +237,10 @@ DEPENDENCIES
   dotenv-rails
   mailgun-ruby (~> 1.2)
   pg (~> 1.1)
+  phonelib (~> 0.8.1)
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.3)
+  truemail (~> 3.0)
   twilio-ruby (~> 5.77)
   tzinfo-data
 

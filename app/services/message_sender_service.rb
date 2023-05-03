@@ -16,12 +16,24 @@ class MessageSenderService
   end
 
   def send_message
-    send_message_via_client
-
-    Response.new(data: {
+    validator = MessageSenderValidator.validate(
       from: from, to: to, message: message, subject: subject, medium: medium
-    }, message: 'message sent', error: [], success?: true)
-  rescue StandardError => e
+    )
+
+    if validator.success?
+      send_message_via_client
+
+      Response.new(
+        data: { from: from, to: to, message: message, subject: subject, medium: medium},
+        message: 'message sent', error: [], success?: true
+      )
+    else
+      Response.new(
+        data: { from: from, to: to, message: message, subject: subject, medium: medium},
+        message: validator.message, error: validator.error, success?: validator.success?
+      )
+    end
+  rescue Error, StandardError => e
     Response.new(data: {}, message: 'an error occurred', error: [e], success?: false)
   end
 
