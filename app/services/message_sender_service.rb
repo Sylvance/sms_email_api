@@ -16,7 +16,8 @@ class MessageSenderService
   end
 
   def send_message
-    send_with_client
+    send_message_via_client
+
     Response.new(data: {
       from: from, to: to, message: message, subject: subject, medium: medium
     }, message: 'message sent', error: [], success?: true)
@@ -26,8 +27,8 @@ class MessageSenderService
 
   private
 
-  def send_with_client
-    case medium
+  def send_message_via_client
+    case medium.to_sym
     when :sms
       SmsClient.send_message(to: to, message: message)
     when :email

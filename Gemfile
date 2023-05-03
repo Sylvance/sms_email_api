@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.1"
 
+gem 'dotenv-rails', groups: [:development, :test]
+
 gem "bootsnap", require: false
 gem "config", "~> 4.1"
 gem "mailgun-ruby", "~> 1.2"

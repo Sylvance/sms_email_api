@@ -1,6 +1,6 @@
 class CommunicationsController < ApplicationController
   def send_communication
-    res = MessageSender.send_message(
+    res = MessageSenderService.send_message(
       from: params[:from],
       to: params[:to],
       subject: params[:subject],
