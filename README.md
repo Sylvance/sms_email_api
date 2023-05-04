@@ -1,7 +1,8 @@
 # SMS EMAIL API
 
 This is a simple app to send sms and emails.
-The postman collection for this api is in the root folder and it is called `sms_email_api.postman_collection.json`.
+
+The postman collection for this api is in the `public/docs` folder and it is called `sms_email_api.postman_collection.json`.
 
 ## Running the app
 
@@ -32,7 +33,7 @@ BODY
 - rspec
 - goodjob
 - postgres
-- swagger
+- postman
 
 ## Author
 
