@@ -12,6 +12,12 @@ The postman collection for this api is in the `public/docs` folder and it is cal
 
 - `bundle exec rspec spec`
 
+## Running the jobs
+
+- `bundle exec good_job start` in prod
+
+- In development, GoodJob executes jobs immediately in a separate thread ("async" mode). 
+
 ## Endpoints
 
 1. POST `communications/send_communication`
@@ -31,9 +37,9 @@ BODY
 
 - rails
 - rspec
-- goodjob
+- goodjob - for async workers
 - postgres
-- postman
+- postman - for documentation and testing
 
 ## Author
 

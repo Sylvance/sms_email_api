@@ -7,6 +7,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 
 gem "bootsnap", require: false
 gem "config", "~> 4.1"
+gem "good_job", "~> 3.15"
 gem "mailgun-ruby", "~> 1.2"
 gem "pg", "~> 1.1"
 gem "phonelib", "~> 0.8.1"

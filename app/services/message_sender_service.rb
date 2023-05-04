@@ -41,26 +41,15 @@ class MessageSenderService
   def send_message_via_client
     case medium.to_sym
     when :sms
-      send_sms if created_message_in_db
+      create_message_in_db
     when :email
-      send_email if created_email_in_db
+      create_email_in_db
     else
       nil
     end
   end
 
-  def send_sms
-    SmsClient.send_message(to: to, message: message)
-  end
-
-  def send_email
-    EmailClient.send_message(
-      from: from, to: to, message: message,
-      subject: subject
-    )
-  end
-
-  def created_message_in_db
+  def create_message_in_db
     now = Time.now
 
     Message.create(
@@ -69,7 +58,7 @@ class MessageSenderService
     )
   end
 
-  def created_email_in_db
+  def create_email_in_db
     now = Time.now
 
     Email.create(
