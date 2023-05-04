@@ -10,7 +10,7 @@ class MessageSenderValidator
 
   def self.validate(from: nil, to:, subject: nil, message:, medium:)
     new(from, to, subject, message, medium).validate
-  rescue ArgumentError, Error, StandardError => e
+  rescue ArgumentError, StandardError => e
     Response.new(message: e.message, error: [e], success?: false)
   end
 
@@ -24,9 +24,9 @@ class MessageSenderValidator
 
   def validate
     raise UnknownMediumError, 'medium must be sms or email' unless [:sms, :email].include? medium.to_sym
-    raise InvalidTypeError, 'medium must be a string' unless medium.is_a(String)
-    raise InvalidTypeError, 'message must be a string' unless message.is_a(String)
-    raise InvalidTypeError, 'subject must be a string' unless subject.is_a(String)
+    raise InvalidTypeError, 'medium must be a string' unless medium.is_a?(String)
+    raise InvalidTypeError, 'message must be a string' unless message.is_a?(String)
+    raise InvalidTypeError, 'subject must be a string' unless subject.is_a?(String)
 
     if medium.to_sym == :sms
       raise InvalidPhoneNumberError, 'phone number must be valid' unless Phonelib.valid?(to)
