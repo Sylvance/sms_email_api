@@ -1,0 +1,38 @@
+{
+	"info": {
+		"_postman_id": "778e4175-df1f-4028-9e58-b4070f3814a0",
+		"name": "sms_email_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "send communication",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"from\": \"+254790000000\",\n    \"to\": \"+254790000000\",\n    \"subject\": \"test\",\n    \"message\": \"Congratulations, your transaction is successful.\",\n    \"medium\": \"sms\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/communications/send_communication",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"communications",
+						"send_communication"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

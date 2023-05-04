@@ -1,24 +1,39 @@
-# README
+# SMS EMAIL API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple app to send sms and emails.
+The postman collection for this api is in the root folder and it is called `sms_email_api.postman_collection.json`.
 
-Things you may want to cover:
+## Running the app
 
-* Ruby version
+- `rails s` will run on port 3000
 
-* System dependencies
+## Running the tests
 
-* Configuration
+- `bundle exec rspec spec`
 
-* Database creation
+## Endpoints
 
-* Database initialization
+1. POST `communications/send_communication`
 
-* How to run the test suite
+BODY
+``` 
+    {
+        "from": "+254790000000",
+        "to": "+254790000000",
+        "subject": "test",
+        "message": "Congratulations, your transaction is successful.",
+        "medium": "sms"
+    }
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## Technologies used
 
-* Deployment instructions
+- rails
+- rspec
+- goodjob
+- postgres
+- swagger
 
-* ...
+## Author
+
+Sylvance Kerandi.
