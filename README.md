@@ -4,6 +4,11 @@ This is a simple app to send sms and emails.
 
 The postman collection for this api is in the `public/docs` folder and it is called `sms_email_api.postman_collection.json`.
 
+## Installation
+
+Copy `.env.example` to `.env`. Insert the values that you are to use inside `.env`.
+Run `bundle install`
+
 ## Running the app
 
 - `rails s` will run on port 3000
